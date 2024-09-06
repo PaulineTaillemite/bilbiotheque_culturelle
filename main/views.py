@@ -9,4 +9,7 @@ import random
 def test(request):
     return render (request, "main/test.html")
 
+def myprofile(request):
+    return render (request, "main/myprofile.html")
+
 
