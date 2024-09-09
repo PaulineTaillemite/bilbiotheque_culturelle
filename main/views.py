@@ -13,3 +13,7 @@ def myprofile(request):
     return render (request, "main/myprofile.html")
 
 
+def test2(request):
+    return render (request, "main/test2.html")
+
+

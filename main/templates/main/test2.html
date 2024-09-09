@@ -1,0 +1,15 @@
+{% comment %} 
+affichera ce qui est affiché dans test hors block
+{% endcomment %}
+
+
+{% extends "main/test.html" %}
+
+{% block head %}
+{% endblock  %}
+
+
+{% comment %} ceci est unique à test2 {% endcomment %}
+{% block content %}
+<p>ceci est un test d'extend de test</p>
+{% endblock content %}
