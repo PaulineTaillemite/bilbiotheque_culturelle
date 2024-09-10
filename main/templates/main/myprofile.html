@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-  <title>PAGE DE TEST POUR VERCEL🥠 </title>
+  <title>PAGE DE TEST POUR VERCEL🥠</title>
   <meta charset="UTF-8" />
-  
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
 </head>
 
 <body>
 
-<a href={% url 'test' %}> test lien qui renvoie vers la page test </a>
+<a href="{% url 'test' %}">test lien qui renvoie vers la page test</a>
 <br>
-<a href={% url 'test2' %}> test lien qui renvoie vers la page test2 </a>
+<a href="{% url 'test2' %}">test lien qui renvoie vers la page test2</a>
 
 <p>CECI SERA LA PAGE QUI AFFICHE LE PROFIL DU USER LOGGÉ</p>
 

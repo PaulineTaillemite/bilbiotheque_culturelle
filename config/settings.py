@@ -115,7 +115,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+# Ce paramètre doit pointer vers ton dossier "static" local
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# Ce paramètre est utilisé pour collecter tous les fichiers statiques avant le déploiement
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
