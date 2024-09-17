@@ -10,11 +10,24 @@
 <p>ceci est un test d'extend de test</p>
 
 <table>
-    <tr>
-      <th>Music</th>
-      <th>Film</th>
-      <th>Video Games</th>
-    </tr>
-  </table>
+  <tr>
+    <th>Name</th>
+    <th>Studio</th>
+    <th>Release Year</th>
+  </tr>
   
+  <!-- Loop through each videogame and display all details -->
+  {% for videogame in videogames|dictsort:"studio" %}
+  <tr>
+    <!-- Display video game in the first column -->
+    <td>{{ videogame.name }}</td>
+    <!-- Display studio in the second column -->
+    <td>{{ videogame.studio }}</td>
+    <!-- Display Year -->
+    <td>{{ videogame.year }}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
+
 {% endblock content %}

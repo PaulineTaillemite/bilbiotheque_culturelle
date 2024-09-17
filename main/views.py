@@ -12,7 +12,9 @@ def myprofile(request):
 
 
 def test2(request):
-    return render (request, "main/test2.html")
+    #je passe le context dans le template
+    context={"videogames" : videogames}
+    return render (request, "main/test2.html", context)
 
 #test dictionnaire
 videogames = [
