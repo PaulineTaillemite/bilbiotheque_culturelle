@@ -1,0 +1,32 @@
+{% extends "main/test.html" %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h1>This is a list of games developped by {{studioname}}</h1>
+<table>
+    <tr>
+        <th>VideoGame</th>
+        <th>Studio</th>
+    </tr>
+    {% comment %} 
+    {% for item in videogames|dictsort:"studio" %}
+    
+    {% if item.studio|lower == studioname|lower %}
+    
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.studio }}</td>
+    </tr>
+    
+    {% endif %}
+    
+    {% endfor %} {% endcomment %}
+    </table>
+    
+    {% endblock %}
+    

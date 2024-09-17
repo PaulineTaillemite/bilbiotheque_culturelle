@@ -21,8 +21,8 @@
   <tr>
     <!-- Display video game in the first column -->
     <td>{{ videogame.name }}</td>
-    <!-- Display studio in the second column -->
-    <td>{{ videogame.studio }}</td>
+    <!-- Display studio in the second column and a like to the view-->
+    <td> <a href="{% url 'test3' videogame.studio|slugify %}">{{ videogame.studio }}</a></td>
     <!-- Display Year -->
     <td>{{ videogame.year }}</td>
   </tr>
@@ -31,3 +31,5 @@
 </table>
 
 {% endblock content %}
+
+<a href="{% url 'details' attraction.state|slugify %}">State details</a>

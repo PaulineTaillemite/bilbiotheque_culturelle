@@ -16,6 +16,12 @@ def test2(request):
     context={"videogames" : videogames}
     return render (request, "main/test2.html", context)
 
+
+def test3(request, studioname):
+    #je passe le context dans le template
+    context={"videogames" : videogames, "studioname" : studioname}
+    return render (request, "main/test3.html", context)
+
 #test dictionnaire
 videogames = [
     {"name": "The Legend of Zelda: Breath of the Wild", "studio": "Nintendo", "year": 2017},
