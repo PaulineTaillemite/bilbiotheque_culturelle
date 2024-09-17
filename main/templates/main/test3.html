@@ -7,26 +7,26 @@
 
 {% block content %}
 
-<h1>This is a list of games developped by {{studioname}}</h1>
+<h1>This is a list of games developed by {{ studioname }}</h1>
+
+<!-- Affichage des variables pour vérifier les valeurs -->
+<p>Studio passé dans l'URL : {{ studioname }}</p>
+
 <table>
-    <tr>
-        <th>VideoGame</th>
-        <th>Studio</th>
-    </tr>
-    {% comment %} 
-    {% for item in videogames|dictsort:"studio" %}
-    
-    {% if item.studio|lower == studioname|lower %}
-    
+<tr>
+    <th>VideoGame</th>
+    <th>Studio</th>
+</tr>
+
+{% for item in videogames|dictsort:"studio" %}       
+    <!-- Utilisation de slugify pour comparaison sécurisée -->
+    {% if item.studio|slugify == studioname|slugify %}
     <tr>
         <td>{{ item.name }}</td>
         <td>{{ item.studio }}</td>
     </tr>
-    
     {% endif %}
-    
-    {% endfor %} {% endcomment %}
-    </table>
-    
-    {% endblock %}
-    
+{% endfor %}
+</table>
+
+{% endblock %}
